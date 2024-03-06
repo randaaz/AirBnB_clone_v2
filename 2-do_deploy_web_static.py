@@ -1,18 +1,18 @@
 #!/usr/bin/python3
-"""Compress web static package
+"""Fabric script for deploying web files to a server.
 """
 from fabric.api import *
 from datetime import datetime
 from os import path
 
 
-env.hosts = ['54.86.220.207', '54.175.137.217']
+env.hosts = ['54.157.162.121', '54.174.153.180']
 env.user = 'ubuntu'
 env.key_filename = '~/.ssh/school'
 
 
 def do_deploy(archive_path):
-        """Deploy web files to server
+        """Deploy web files to the server using rsync.
         """
         try:
                 if not (path.exists(archive_path)):
