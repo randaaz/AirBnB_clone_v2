@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 """
-Simple flask app that returns "Hello HBNB!" on the root route.
+Simple flask app that returns "Hello HBNB!" on the root route
 """
 from flask import Flask
 app = Flask(__name__)
