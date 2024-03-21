@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 # -*- coding: utf-8 -*-
 """
-Basic Flask application with routes to display a list of states and a specific state.
+Basic Flask application with routes to
+display a list of states and a specific state.
 """
 from models import storage
 from models.state import State
