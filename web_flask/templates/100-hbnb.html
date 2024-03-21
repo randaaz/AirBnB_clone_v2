@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HBNB</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/3-footer.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/3-header.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/4-common.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/6-filters.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/8-places.css') }}">
+</head>
+<body>
+    <header class="header">
+        <!-- Header content -->
+    </header>
+    <section class="filters-section">
+        <!-- Filters content -->
+    </section>
+    <section class="places-section">
+        <h2>Places</h2>
+        <div class="places-container">
+            {% for place in places %}
+            <div class="place">
+                <!-- Place content -->
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    <footer class="footer">
+        <!-- Footer content -->
+    </footer>
+</body>
+</html>
