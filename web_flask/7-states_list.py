@@ -1,27 +1,26 @@
 #!/usr/bin/python3
-# -*- coding: utf-8 -*-
 """
-Basic Flask application with a route to display a list of states.
+start Flask application
 """
-from models import storage
-from models.state import State
+
 from flask import Flask, render_template
+from models import *
+from models import storage
 app = Flask(__name__)
 
 
+@app.route('/states_list', strict_slashes=False)
+def states_list():
+    """display a HTML page with the states listed in alphabetical order"""
+    states = sorted(list(storage.all("State").values()), key=lambda x: x.name)
+    return render_template('7-states_list.html', states=states)
+
+
 @app.teardown_appcontext
-def appcontext_teardown(self):
-    """Close the storage engine at the end of each request.
-    """
+def teardown_db(exception):
+    """closes the storage on teardown"""
     storage.close()
 
 
-@app.route('/states_list', strict_slashes=False)
-def state_info():
-    """ Display a HTML page inside the tag body"""
-    return render_template('7-states_list.html',
-                           states=storage.all(State))
-
-
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    app.run(host='0.0.0.0', port='5000')
